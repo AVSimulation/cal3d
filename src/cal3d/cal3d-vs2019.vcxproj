@@ -145,11 +145,12 @@
       <Culture>0x0807</Culture>
     </ResourceCompile>
     <Link>
-      <OutputFile>$(OutDir)cal3d_d.dll</OutputFile>
+      <OutputFile>$(OutDir)Ext.cal3d_d.dll</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX64</TargetMachine>
+      <ProgramDatabaseFile>$(OutDir)Ext.$(TargetName).pdb</ProgramDatabaseFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -222,12 +223,13 @@
       <Culture>0x0807</Culture>
     </ResourceCompile>
     <Link>
-      <OutputFile>$(OutDir)cal3d.dll</OutputFile>
+      <OutputFile>$(OutDir)Ext.cal3d.dll</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX64</TargetMachine>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <ProgramDatabaseFile>$(OutDir)Ext.$(TargetName).pdb</ProgramDatabaseFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
