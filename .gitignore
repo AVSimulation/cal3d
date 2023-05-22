@@ -40,3 +40,7 @@
 *.suo
 *.tlog
 *.lastbuildstate
+*.log
+Debug
+Release
+
