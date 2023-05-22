@@ -31,3 +31,12 @@
 *.out
 *.app
 
+# Visual Studio
+.vs
+*.pdb
+*.vcxproj.user
+*.exp
+*.sdf
+*.suo
+*.tlog
+*.lastbuildstate
