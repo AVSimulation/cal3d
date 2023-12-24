@@ -198,6 +198,7 @@ GetTiXmlBinding( CalCoreSubmesh const &, IdentityBase  )
   return &binding;
 }
 
+template<>
 char const *
 ConvertToString( CalCoreSubmesh::TextureCoordinate const & textureCoordinate )
 {
@@ -211,6 +212,7 @@ ConvertToString( CalCoreSubmesh::TextureCoordinate const & textureCoordinate )
   
 }
 
+template<>
 void
 ConvertFromString( char const * inStr, CalCoreSubmesh::TextureCoordinate * textureCoordinate )
 {
@@ -221,6 +223,7 @@ ConvertFromString( char const * inStr, CalCoreSubmesh::TextureCoordinate * textu
     textureCoordinate->v;
 }
 
+template<>
 char const *
 ConvertToString( CalVector const & v )
 {
@@ -234,8 +237,8 @@ ConvertToString( CalVector const & v )
   
 }
 
-void
-ConvertFromString( char const * inStr, CalVector * v )
+template<>
+void ConvertFromString( char const * inStr, CalVector * v )
 {
   static std::stringstream str;
   str.str("");
@@ -244,8 +247,8 @@ ConvertFromString( char const * inStr, CalVector * v )
 }
 
 
-char const *
-ConvertToString( CalIndex const vertexId[3] )
+template<>
+char const * ConvertToString( CalIndex const (&vertexId)[3] )
 {
   static std::stringstream str;
   static std::string outStr;
@@ -257,8 +260,20 @@ ConvertToString( CalIndex const vertexId[3] )
   return outStr.c_str();
 }
 
-void
-ConvertFromString( char const * inStr, CalIndex (*vertexId)[3] )
+template<>
+char const * ConvertToString( CalIndex const (&vertexId)[2] )
+{
+  static std::stringstream str;
+  static std::string outStr;
+  str.str("");
+  str << vertexId[0]<< " "
+      << vertexId[1];
+  outStr = str.str();
+  return outStr.c_str();
+}
+
+template<>
+void ConvertFromString( char const * inStr, CalIndex (*vertexId)[3] )
 {
   static std::stringstream str;
   str.str("");
@@ -266,6 +281,7 @@ ConvertFromString( char const * inStr, CalIndex (*vertexId)[3] )
   str >> *vertexId[0] >> *vertexId[1] >> *vertexId[2];
 }
 
+template<>
 void
 ConvertFromString( char const * inStr, CalIndex (*vertexId)[2] )
 {

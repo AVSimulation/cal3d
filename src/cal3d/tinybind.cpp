@@ -76,7 +76,6 @@ ConvertToString<size_t>( size_t const & d )
   sprintf(buffer, "%d", d);
   return buffer;
 }
-/*
 template<>
 char const *
 ConvertToString<unsigned>( unsigned int const & d )
@@ -85,7 +84,7 @@ ConvertToString<unsigned>( unsigned int const & d )
   sprintf(buffer, "%u", d);
   return buffer;
 }
-*/
+/*
 template<>
 char const *
 ConvertToString<unsigned long>( unsigned long const & d )
@@ -94,7 +93,7 @@ ConvertToString<unsigned long>( unsigned long const & d )
   sprintf(buffer, "%lu", d);
   return buffer;
 }
-
+*/
 template<>
 char const *
 ConvertToString<long>(long const & d )
